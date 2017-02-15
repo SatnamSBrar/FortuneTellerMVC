@@ -36,7 +36,31 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Age, new SelectList(new List<Object>
+           {
+               new {value = 0, text = "0" },new {value = 1, text = "1" },new {value = 2, text = "2" },new {value = 3, text = "3" },new {value = 4, text = "4" },
+               new {value = 5, text = "5" },new {value = 6, text = "6" },new {value = 7, text = "7" },new {value = 8, text = "8" },new {value = 9, text = "9" },
+               new {value = 10, text = "10" },new {value = 11, text = "11" },new {value = 12, text = "12" },new {value = 13, text = "13" },new {value = 14, text = "14" },
+               new {value = 15, text = "15" },new {value = 16, text = "16" },new {value = 17, text = "17" },new {value = 18, text = "18" },new {value = 19, text = "19" },
+               new {value = 20, text = "20" },new {value = 21, text = "21" },new {value = 22, text = "22" },new {value = 23, text = "23" },new {value = 24, text = "24" },
+               new {value = 25, text = "25" },new {value = 26, text = "26" },new {value = 27, text = "27" },new {value = 28, text = "28" },new {value = 29, text = "29" },
+               new {value = 30, text = "30" },new {value = 31, text = "31" },new {value = 32, text = "32" },new {value = 33, text = "33" },new {value = 34, text = "34" },
+               new {value = 35, text = "35" },new {value = 36, text = "36" },new {value = 37, text = "37" },new {value = 38, text = "38" },new {value = 39, text = "39" },
+               new {value = 40, text = "40" },new {value = 41, text = "41" },new {value = 42, text = "42" },new {value = 43, text = "43" },new {value = 44, text = "44" },
+               new {value = 45, text = "45" },new {value = 46, text = "46" },new {value = 47, text = "47" },new {value = 48, text = "48" },new {value = 49, text = "49" },
+               new {value = 50, text = "50" },new {value = 51, text = "51" },new {value = 52, text = "52" },new {value = 53, text = "53" },new {value = 54, text = "54" },
+               new {value = 55, text = "55" },new {value = 56, text = "56" },new {value = 57, text = "57" },new {value = 58, text = "58" },new {value = 59, text = "59" },
+               new {value = 60, text = "60" },new {value = 61, text = "61" },new {value = 62, text = "62" },new {value = 63, text = "63" },new {value = 64, text = "64" },
+               new {value = 65, text = "65" },new {value = 66, text = "66" },new {value = 67, text = "67" },new {value = 68, text = "68" },new {value = 69, text = "69" },
+               new {value = 70, text = "70" },new {value = 71, text = "71" },new {value = 72, text = "72" },new {value = 73, text = "73" },new {value = 74, text = "74" },
+               new {value = 75, text = "75" },new {value = 76, text = "76" },new {value = 77, text = "77" },new {value = 78, text = "78" },new {value = 79, text = "79" },
+               new {value = 80, text = "80" },new {value = 81, text = "81" },new {value = 82, text = "82" },new {value = 83, text = "83" },new {value = 84, text = "84" },
+               new {value = 85, text = "85" },new {value = 86, text = "86" },new {value = 87, text = "87" },new {value = 88, text = "88" },new {value = 89, text = "89" },
+               new {value = 90, text = "90" },new {value = 91, text = "91" },new {value = 92, text = "92" },new {value = 93, text = "93" },new {value = 94, text = "94" },
+               new {value = 95, text = "95" },new {value = 96, text = "96" },new {value = 97, text = "97" },new {value = 98, text = "98" },new {value = 99, text = "99" },
+               new {value = 100, text = "100" }
+           }, "value", "text", 0))
+                @*@Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
             </div>
         </div>
