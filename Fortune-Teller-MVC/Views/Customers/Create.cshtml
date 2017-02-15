@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>New Customer</h4>
         <hr />
@@ -36,7 +36,8 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
-                <label for="sel1">Select list:</label>
+    @*NOT MAKING LIST FOR AGE YET*@            
+    @*<label for="sel1">Select Age:</label>
             <select class="form-control" id="sel1">
                 <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
                 <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
@@ -48,7 +49,7 @@
                 <option>71</option><option>72</option><option>73</option><option>74</option><option>75</option><option>76</option><option>77</option><option>78</option><option>79</option><option>80</option>
                 <option>81</option><option>82</option><option>83</option><option>84</option><option>85</option><option>86</option><option>87</option><option>88</option><option>89</option><option>90</option>
                 <option>91</option><option>92</option><option>93</option><option>94</option><option>95</option><option>96</option><option>97</option><option>98</option><option>99</option><option>100</option>
-            </select>
+            </select>*@
             </div>
         </div>
 
@@ -63,7 +64,18 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FavoriteColor, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FavoriteColor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.FavoriteColor, new SelectList(new List<Object>
+           {
+               new {value = 0, text = "Red" },
+               new {value = 1, text = "Orange" },
+               new {value = 2, text = "Yellow" },
+               new {value = 3, text = "Green" },
+               new {value = 4, text = "Blue" },
+               new {value = 5, text = "Indigo" },
+               new {value = 6, text = "Violet" }
+           }, "value", "text", 0))
+
+                @*@Html.EditorFor(model => model.FavoriteColor, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.FavoriteColor, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -61,25 +61,25 @@ namespace Fortune_Teller_MVC.Controllers
             //Mode of Transportation
             switch (customer.FavoriteColor)
             {
-                case "Red":
+                case "0":
                     ViewBag.ModeOfTransportation = " Lambo";
                     break;
-                case "Orange":
+                case "1":
                     ViewBag.ModeOfTransportation = " Toyota Camry";
                     break;
-                case "Yellow":
+                case "2":
                     ViewBag.ModeOfTransportation = " Bentley";
                     break;
-                case "Green":
+                case "3":
                     ViewBag.ModeOfTransportation = " Subaru";
                     break;
-                case "Blue":
+                case "4":
                     ViewBag.ModeOfTransportation = " Ducati";
                     break;
-                case "Indigo":
+                case "5":
                     ViewBag.ModeOfTransportation = " Tesla";
                     break;
-                case "Violet":
+                case "6":
                     ViewBag.ModeOfTransportation = " Volkswagen";
                     break;
             }

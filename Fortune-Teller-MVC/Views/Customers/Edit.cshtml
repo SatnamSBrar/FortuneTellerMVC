@@ -52,6 +52,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FavoriteColor, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FavoriteColor, new SelectList(new List<Object>
+           {
+               new {value = 0, text = "Red" },
+               new {value = 1, text = "Orange" },
+               new {value = 2, text = "Yellow" },
+               new {value = 3, text = "Green" },
+               new {value = 4, text = "Blue" },
+               new {value = 5, text = "Indigo" },
+               new {value = 6, text = "Violet" }
+           }, "value", "text", 0))
                 @Html.EditorFor(model => model.FavoriteColor, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.FavoriteColor, "", new { @class = "text-danger" })
             </div>
