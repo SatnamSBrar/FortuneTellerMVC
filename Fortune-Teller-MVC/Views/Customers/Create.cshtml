@@ -56,7 +56,22 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BirthMonth, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.BirthMonth, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.BirthMonth, new SelectList(new List<Object>
+           {
+               new {value = 0, text = "January" },
+               new {value = 1, text = "February" },
+               new {value = 2, text = "March" },
+               new {value = 3, text = "April" },
+               new {value = 4, text = "May" },
+               new {value = 5, text = "June" },
+               new {value = 6, text = "July" },
+               new {value = 7, text = "August" },
+               new {value = 8, text = "September" },
+               new {value = 9, text = "October" },
+               new {value = 10, text = "November" },
+               new {value = 11, text = "December" }
+           }, "value", "text", 0))
+                @*@Html.EditorFor(model => model.BirthMonth, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.BirthMonth, "", new { @class = "text-danger" })
             </div>
         </div>

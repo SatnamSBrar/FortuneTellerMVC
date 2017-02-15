@@ -45,15 +45,15 @@ namespace Fortune_Teller_MVC.Controllers
             }
 
             //Retirement Money
-            if (customer.BirthMonth >= 1 && customer.BirthMonth <= 4)
+            if (customer.BirthMonth >= 0 && customer.BirthMonth <= 3)
             {
                 ViewBag.RetirementMoney = " $500,000.00 ";
             }
-            else if (customer.BirthMonth > 4 && customer.BirthMonth <= 8)
+            else if (customer.BirthMonth > 3 && customer.BirthMonth <= 7)
             {
                 ViewBag.RetirementMoney = " $900,000.00 ";
             }
-            else if (customer.BirthMonth > 8 && customer.BirthMonth <= 12)
+            else if (customer.BirthMonth > 7 && customer.BirthMonth <= 11)
             {
                 ViewBag.RetirementMoney = " $50,000.00 ";
             }

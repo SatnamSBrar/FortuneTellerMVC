@@ -29,7 +29,48 @@
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 response">
                         <p>@Html.DisplayFor(modelItem => item.Age)</p>
-                        <p>@Html.DisplayFor(modelItem => item.BirthMonth)</p>
+                        
+                        @*DROPDOWN RESPONSE FOR MONTH OF BIRTH*@
+                        <p>@switch (item.BirthMonth)
+                        {
+                            case (0):
+                                <span>January</span>
+                                break;
+                            case (1):
+                                <span>February</span>
+                                break;
+                            case (2):
+                                <span>March</span>
+                                break;
+                            case (3):
+                                <span>April</span>
+                                break;
+                            case (4):
+                                <span>May</span>
+                                break;
+                            case (5):
+                                <span>June</span>
+                                break;
+                            case (6):
+                                <span>July</span>
+                                break;
+                            case (7):
+                                <span>August</span>
+                                break;
+                            case (8):
+                                <span>September</span>
+                                break;
+                            case (9):
+                                <span>October</span>
+                                break;
+                            case (10):
+                                <span>November</span>
+                                break;
+                            case (11):
+                                <span>December</span>
+                                break;
+                        } 
+                        @*@Html.DisplayFor(modelItem => item.BirthMonth)*@</p>
                         
                         @*DROPDOWN RESPONSE FOR FAVORITE COLOR*@
                         <p>@switch (item.FavoriteColor)
