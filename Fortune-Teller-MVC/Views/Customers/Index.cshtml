@@ -4,7 +4,43 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@*CREATE NEW CUSTOMER*@
+<p class="new-customer">
+    <button type="button" class="btn btn-info create-new" onclick="location.href='@Url.Action("Create", "Customers")'">Create Category</button>
+</p>
+
+@*ROW CONTAINING CUSTOMER INFORMATION*@
+<div class="row">
+    @*LOOP THAT IS ABLE TO HANDLE NEW CUSTOMER ADDITIONS*@
+    @foreach (var item in Model)
+    {
+        @*CUSTOMER*@
+        <div class="col-xs-4 col-sm-4 col-md-4 category-grid">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="category-header">@Html.DisplayFor(modelItem => item.FirstName + " " + item.LastName)</h4>
+                    <p>Age:&nbsp;<span>@Html.DisplayFor(modelItem => item.Age)</span></p>
+                    <p>Month of Birth:&nbsp;<span>@Html.DisplayFor(modelItem => item.BirthMonth)</span></p>
+                    <p>Favorite Color:&nbsp;<span>@Html.DisplayFor(modelItem => item.FavoriteColor)</span></p>
+                    <p>Number of Siblings:&nbsp;<span>@Html.DisplayFor(modelItem => item.NumberOfSiblings)</span></p>
+                    @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
+                    <p>
+                        @Html.ActionLink("Details", "Details", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -60,4 +96,4 @@
     </tr>
 }
 
-</table>
+</table>*@
