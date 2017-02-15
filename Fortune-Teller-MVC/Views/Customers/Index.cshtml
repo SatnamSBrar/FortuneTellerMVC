@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Fortune_Teller_MVC.Models.Customer>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Customers";
 }
+
+<h2>Customers</h2>
 
 @*CREATE NEW CUSTOMER*@
 <p class="new-customer">
@@ -15,14 +17,22 @@
     @foreach (var item in Model)
     {
         @*CUSTOMER*@
-        <div class="col-xs-4 col-sm-4 col-md-4 category-grid">
+        <div class="col-xs-4 col-sm-4 col-md-4 customer-grid">
             <div class="thumbnail">
                 <div class="caption">
-                    <h4 class="category-header">@Html.DisplayFor(modelItem => item.FirstName + " " + item.LastName)</h4>
-                    <p>Age:&nbsp;<span>@Html.DisplayFor(modelItem => item.Age)</span></p>
-                    <p>Month of Birth:&nbsp;<span>@Html.DisplayFor(modelItem => item.BirthMonth)</span></p>
-                    <p>Favorite Color:&nbsp;<span>@Html.DisplayFor(modelItem => item.FavoriteColor)</span></p>
-                    <p>Number of Siblings:&nbsp;<span>@Html.DisplayFor(modelItem => item.NumberOfSiblings)</span></p>
+                    <h4 class="grid-header">@Html.DisplayFor(modelItem => item.FirstName)&nbsp;@Html.DisplayFor(modelItem => item.LastName)</h4>
+                    <div class="col-xs-6 col-sm-6 col-md-6 category">
+                        <p>Age:</p>
+                        <p>Month of Birth:</p>
+                        <p>Favorite Color:</p>
+                        <p>Number of Siblings:</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 response">
+                        <p>@Html.DisplayFor(modelItem => item.Age)</p>
+                        <p>@Html.DisplayFor(modelItem => item.BirthMonth)</p>
+                        <p>@Html.DisplayFor(modelItem => item.FavoriteColor)</p>
+                        <p>@Html.DisplayFor(modelItem => item.NumberOfSiblings)</p>
+                    </div>
                     @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
                     <p>
                         @Html.ActionLink("Details", "Details", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
