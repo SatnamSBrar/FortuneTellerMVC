@@ -101,7 +101,7 @@ namespace Fortune_Teller_MVC.Controllers
             {
                 ViewBag.VacationHome = " Madrid";
             }
-            else if (customer.NumberOfSiblings > 3)
+            else if (customer.NumberOfSiblings == 4)
             {
                 ViewBag.VacationHome = " Miami";
             }

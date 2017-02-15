@@ -8,7 +8,7 @@
 
 @*CREATE NEW CUSTOMER*@
 <p class="new-customer">
-    <button type="button" class="btn btn-info create-new" onclick="location.href='@Url.Action("Create", "Customers")'">Create Category</button>
+    <button type="button" class="btn btn-info create-new" onclick="location.href='@Url.Action("Create", "Customers")'">New Customer</button>
 </p>
 
 @*ROW CONTAINING CUSTOMER INFORMATION*@
@@ -30,6 +30,8 @@
                     <div class="col-xs-6 col-sm-6 col-md-6 response">
                         <p>@Html.DisplayFor(modelItem => item.Age)</p>
                         <p>@Html.DisplayFor(modelItem => item.BirthMonth)</p>
+                        
+                        @*DROPDOWN RESPONSE FOR FAVORITE COLOR*@
                         <p>@switch (item.FavoriteColor)
                         {
                             case ("0"):
@@ -53,13 +55,37 @@
                             case ("6"):
                                 item.FavoriteColor = "Violet";
                                 break;
-                        } </p>
-        
-                                <p>@Html.DisplayFor(modelItem => item.FavoriteColor)</p>
-        
-                                <p>@Html.DisplayFor(modelItem => item.NumberOfSiblings)</p>
-        
-                            </div>
+                        } 
+                        @Html.DisplayFor(modelItem => item.FavoriteColor)</p>
+                        
+                        @*DROPDOWN RESPONSE FOR NUMBER OF SIBLINGS*@
+                        <p>@switch (item.NumberOfSiblings)
+                        {
+                            case (0):
+                                item.NumberOfSiblings = 0;
+                                break;
+                            case (1):
+                                item.NumberOfSiblings = 1;
+                                break;
+                            case (2):
+                                item.NumberOfSiblings = 2;
+                                break;
+                            case (3):
+                                item.NumberOfSiblings = 3;
+                                break;
+                            case (4):
+                                item.NumberOfSiblings = 4;
+                                break;
+                        }
+                        @if (item.NumberOfSiblings == 4)
+                        {
+                            <span>More than 3</span>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.NumberOfSiblings);
+                        }</p>
+                    </div>
                     @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
                     <p>
                         @Html.ActionLink("See Fortune", "Details", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })

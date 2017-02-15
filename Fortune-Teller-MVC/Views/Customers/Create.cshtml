@@ -74,8 +74,6 @@
                new {value = 5, text = "Indigo" },
                new {value = 6, text = "Violet" }
            }, "value", "text", 0))
-
-                @*@Html.EditorFor(model => model.FavoriteColor, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.FavoriteColor, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -83,7 +81,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NumberOfSiblings, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NumberOfSiblings, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.NumberOfSiblings, new SelectList(new List<Object>
+           {
+               new {value = 0, text = "0" },
+               new {value = 1, text = "1" },
+               new {value = 2, text = "2" },
+               new {value = 3, text = "3" },
+               new {value = 4, text = "More than 3" },
+           }, "value", "text", 0))
+                @*@Html.EditorFor(model => model.NumberOfSiblings, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.NumberOfSiblings, "", new { @class = "text-danger" })
             </div>
         </div>
