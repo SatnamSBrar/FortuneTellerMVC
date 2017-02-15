@@ -1,10 +1,24 @@
 ﻿@model Fortune_Teller_MVC.Models.Customer
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Fortune";
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(modelItem => Model.FirstName)&nbsp;@Html.DisplayFor(modelItem => Model.LastName)</h2>
+
+<div class="fortune">
+    <p>Based on your input, the crystal ball shows...</p>
+    <p>You will retire at the age of <span>@ViewBag.RetirementAge</span> with <span>@ViewBag.RetirementMoney</span> across your bank accounts, a vacation home in <span>@ViewBag.VacationHome</span>, and a <span>@ViewBag.ModeOfTransportation</span>.</p>
+</div>
+
+@*GO BACK TO LIST and EDIT and DELETE*@
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }, new { @class = "btn btn-info", role = "button" })
+    @Html.ActionLink("Delete", "Delete", new { id = Model.CustomerID }, new { @class = "btn btn-info", role = "button" })
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Categories")'">Back to List</button>
+</p>
+
+@*<h2>Fortune</h2>
 
 <div>
     <h4>Customer</h4>
@@ -63,4 +77,4 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</p>*@

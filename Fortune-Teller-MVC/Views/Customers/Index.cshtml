@@ -35,7 +35,7 @@
                     </div>
                     @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
                     <p>
-                        @Html.ActionLink("Details", "Details", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
+                        @Html.ActionLink("See Fortune", "Details", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
                         @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
                         @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
                     </p>

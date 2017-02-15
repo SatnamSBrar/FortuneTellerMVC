@@ -37,73 +37,73 @@ namespace Fortune_Teller_MVC.Controllers
             //Retirement Age
             if (customer.Age % 2 == 0)
             {
-                ViewBag.RetirementAge = "75";
+                ViewBag.RetirementAge = " 75 ";
             }
             else
             {
-                ViewBag.RetirementAge = "65";
+                ViewBag.RetirementAge = " 65 ";
             }
 
             //Retirement Money
             if (customer.BirthMonth >= 1 && customer.BirthMonth <= 4)
             {
-                ViewBag.RetirementMoney = "$500,000.00";
+                ViewBag.RetirementMoney = " $500,000.00 ";
             }
             else if (customer.BirthMonth > 4 && customer.BirthMonth <= 8)
             {
-                ViewBag.RetirementMoney = "$900,000.00";
+                ViewBag.RetirementMoney = " $900,000.00 ";
             }
             else if (customer.BirthMonth > 8 && customer.BirthMonth <= 12)
             {
-                ViewBag.RetirementMoney = "$50,000.00";
+                ViewBag.RetirementMoney = " $50,000.00 ";
             }
 
             //Mode of Transportation
             switch (customer.FavoriteColor)
             {
                 case "Red":
-                    ViewBag.ModeOfTransportation = "Lambo";
+                    ViewBag.ModeOfTransportation = " Lambo";
                     break;
                 case "Orange":
-                    ViewBag.ModeOfTransportation = "Toyota Camry";
+                    ViewBag.ModeOfTransportation = " Toyota Camry";
                     break;
                 case "Yellow":
-                    ViewBag.ModeOfTransportation = "Bentley";
+                    ViewBag.ModeOfTransportation = " Bentley";
                     break;
                 case "Green":
-                    ViewBag.ModeOfTransportation = "Subaru";
+                    ViewBag.ModeOfTransportation = " Subaru";
                     break;
                 case "Blue":
-                    ViewBag.ModeOfTransportation = "Ducati";
+                    ViewBag.ModeOfTransportation = " Ducati";
                     break;
                 case "Indigo":
-                    ViewBag.ModeOfTransportation = "Tesla";
+                    ViewBag.ModeOfTransportation = " Tesla";
                     break;
                 case "Violet":
-                    ViewBag.ModeOfTransportation = "Volkswagen";
+                    ViewBag.ModeOfTransportation = " Volkswagen";
                     break;
             }
 
             //Vacation Home
             if (customer.NumberOfSiblings == 0)
             {
-                ViewBag.VacationHome = "Paris";
+                ViewBag.VacationHome = " Paris";
             }
             else if (customer.NumberOfSiblings == 1)
             {
-                ViewBag.VacationHome = "Barcelona";
+                ViewBag.VacationHome = " Barcelona";
             }
             else if (customer.NumberOfSiblings == 2)
             {
-                ViewBag.VacationHome = "Venice";
+                ViewBag.VacationHome = " Venice";
             }
             else if (customer.NumberOfSiblings == 3)
             {
-                ViewBag.VacationHome = "Madrid";
+                ViewBag.VacationHome = " Madrid";
             }
             else if (customer.NumberOfSiblings > 3)
             {
-                ViewBag.VacationHome = "Miami";
+                ViewBag.VacationHome = " Miami";
             }
 
             return View(customer);
