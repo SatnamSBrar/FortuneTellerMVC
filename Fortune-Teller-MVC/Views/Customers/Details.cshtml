@@ -6,7 +6,123 @@
 
 <h2>@Html.DisplayFor(modelItem => Model.FirstName)&nbsp;@Html.DisplayFor(modelItem => Model.LastName)</h2>
 
-<div class="fortune">
+<div class="row">
+    <div class="col-xs-2 col-sm-2 col-md-2 category">
+        <p>Age:</p>
+        <p>Month of Birth:</p>
+        <p>Favorite Color:</p>
+        <p>Number of Siblings:</p>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 response">
+        <p>@Html.DisplayFor(modelItem => Model.Age)</p>
+
+        @*DROPDOWN RESPONSE FOR MONTH OF BIRTH*@
+        <p>
+            @switch (Model.BirthMonth)
+            {
+                case (0):
+                    <span>January</span>
+                    break;
+                case (1):
+                    <span>February</span>
+                    break;
+                case (2):
+                    <span>March</span>
+                    break;
+                case (3):
+                    <span>April</span>
+                    break;
+                case (4):
+                    <span>May</span>
+                    break;
+                case (5):
+                    <span>June</span>
+                    break;
+                case (6):
+                    <span>July</span>
+                    break;
+                case (7):
+                    <span>August</span>
+                    break;
+                case (8):
+                    <span>September</span>
+                    break;
+                case (9):
+                    <span>October</span>
+                    break;
+                case (10):
+                    <span>November</span>
+                    break;
+                case (11):
+                    <span>December</span>
+                    break;
+            }
+            @*@Html.DisplayFor(modelItem => item.BirthMonth)*@
+        </p>
+
+        @*DROPDOWN RESPONSE FOR FAVORITE COLOR*@
+        <p>
+            @switch (Model.FavoriteColor)
+            {
+                case ("0"):
+                    Model.FavoriteColor = "Red";
+                    break;
+                case ("1"):
+                    Model.FavoriteColor = "Orange";
+                    break;
+                case ("2"):
+                    Model.FavoriteColor = "Yellow";
+                    break;
+                case ("3"):
+                    Model.FavoriteColor = "Green";
+                    break;
+                case ("4"):
+                    Model.FavoriteColor = "Blue";
+                    break;
+                case ("5"):
+                    Model.FavoriteColor = "Indigo";
+                    break;
+                case ("6"):
+                    Model.FavoriteColor = "Violet";
+                    break;
+            }
+            @Html.DisplayFor(modelItem => Model.FavoriteColor)
+        </p>
+
+        @*DROPDOWN RESPONSE FOR NUMBER OF SIBLINGS*@
+        <p>
+            @switch (Model.NumberOfSiblings)
+            {
+                case (0):
+                    Model.NumberOfSiblings = 0;
+                    break;
+                case (1):
+                    Model.NumberOfSiblings = 1;
+                    break;
+                case (2):
+                    Model.NumberOfSiblings = 2;
+                    break;
+                case (3):
+                    Model.NumberOfSiblings = 3;
+                    break;
+                case (4):
+                    Model.NumberOfSiblings = 4;
+                    break;
+            }
+            @if (Model.NumberOfSiblings == 4)
+            {
+                <span>More than 3</span>
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => Model.NumberOfSiblings);
+            }
+        </p>
+    </div>
+</div>
+
+@*FORTUNE*@
+<div class="container row fortune">
     <p>Based on your input, the crystal ball shows...</p>
     <p>You will retire at the age of <span>@ViewBag.RetirementAge</span> with <span>@ViewBag.RetirementMoney</span> across your bank accounts, a vacation home in <span>@ViewBag.VacationHome</span>, and a <span>@ViewBag.ModeOfTransportation</span>.</p>
 </div>

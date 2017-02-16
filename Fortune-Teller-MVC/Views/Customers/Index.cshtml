@@ -17,122 +17,16 @@
     @foreach (var item in Model)
     {
         @*CUSTOMER*@
-        <div class="col-xs-4 col-sm-4 col-md-4 customer-grid">
+        <div class="col-xs-12 col-sm-12 col-md-12 customer-grid">
             <div class="thumbnail">
-                <div class="caption">
-                    <h4 class="grid-header">@Html.DisplayFor(modelItem => item.FirstName)&nbsp;@Html.DisplayFor(modelItem => item.LastName)</h4>
-                    <div class="col-xs-6 col-sm-6 col-md-6 category">
-                        <p>Age:</p>
-                        <p>Month of Birth:</p>
-                        <p>Favorite Color:</p>
-                        <p>Number of Siblings:</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 response">
-                        <p>@Html.DisplayFor(modelItem => item.Age)</p>
-                        
-                        @*DROPDOWN RESPONSE FOR MONTH OF BIRTH*@
-                        <p>@switch (item.BirthMonth)
-                        {
-                            case (0):
-                                <span>January</span>
-                                break;
-                            case (1):
-                                <span>February</span>
-                                break;
-                            case (2):
-                                <span>March</span>
-                                break;
-                            case (3):
-                                <span>April</span>
-                                break;
-                            case (4):
-                                <span>May</span>
-                                break;
-                            case (5):
-                                <span>June</span>
-                                break;
-                            case (6):
-                                <span>July</span>
-                                break;
-                            case (7):
-                                <span>August</span>
-                                break;
-                            case (8):
-                                <span>September</span>
-                                break;
-                            case (9):
-                                <span>October</span>
-                                break;
-                            case (10):
-                                <span>November</span>
-                                break;
-                            case (11):
-                                <span>December</span>
-                                break;
-                        } 
-                        @*@Html.DisplayFor(modelItem => item.BirthMonth)*@</p>
-                        
-                        @*DROPDOWN RESPONSE FOR FAVORITE COLOR*@
-                        <p>@switch (item.FavoriteColor)
-                        {
-                            case ("0"):
-                                item.FavoriteColor = "Red";
-                                break;
-                            case ("1"):
-                                item.FavoriteColor = "Orange";
-                                break;
-                            case ("2"):
-                                item.FavoriteColor = "Yellow";
-                                break;
-                            case ("3"):
-                                item.FavoriteColor = "Green";
-                                break;
-                            case ("4"):
-                                item.FavoriteColor = "Blue";
-                                break;
-                            case ("5"):
-                                item.FavoriteColor = "Indigo";
-                                break;
-                            case ("6"):
-                                item.FavoriteColor = "Violet";
-                                break;
-                        } 
-                        @Html.DisplayFor(modelItem => item.FavoriteColor)</p>
-                        
-                        @*DROPDOWN RESPONSE FOR NUMBER OF SIBLINGS*@
-                        <p>@switch (item.NumberOfSiblings)
-                        {
-                            case (0):
-                                item.NumberOfSiblings = 0;
-                                break;
-                            case (1):
-                                item.NumberOfSiblings = 1;
-                                break;
-                            case (2):
-                                item.NumberOfSiblings = 2;
-                                break;
-                            case (3):
-                                item.NumberOfSiblings = 3;
-                                break;
-                            case (4):
-                                item.NumberOfSiblings = 4;
-                                break;
-                        }
-                        @if (item.NumberOfSiblings == 4)
-                        {
-                            <span>More than 3</span>
-                        }
-                        else
-                        {
-                            @Html.DisplayFor(modelItem => item.NumberOfSiblings);
-                        }</p>
-                    </div>
+                <div class="caption row">
+                    <div class="grid-header col-md-3">@Html.DisplayFor(modelItem => item.FirstName)&nbsp;@Html.DisplayFor(modelItem => item.LastName)</div>
                     @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
-                    <p>
-                        @Html.ActionLink("See Fortune", "Details", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
-                        @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID }, new { @class = "btn btn-info", role = "button" })
-                    </p>
+                    <div class="buttons col-md-9">
+                        @Html.ActionLink("See Fortune", "Details", new { id = item.CustomerID }, new { @class = "btn btn-info btn-option", role = "button" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }, new { @class = "btn btn-info btn-option", role = "button" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID }, new { @class = "btn btn-info btn-option", role = "button" })
+                    </div>
                 </div>
             </div>
         </div>
