@@ -3,6 +3,7 @@
     padding-bottom: 20px;
     background-color:rgb(62,80,92);
     color:rgb(5,5,5);
+    background-image:radial-gradient(rgb(62,80,92),rgb(5,5,5));
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -58,15 +59,25 @@ button.navbar-toggle {
     background-color:rgb(62,80,92);
 }
 
+/*VIEW HEADER*/
+.view-header {
+    text-align:center;
+    color:rgb(250,250,250);
+    background-image:linear-gradient(to left,rgba(62,80,92,0),rgb(5,5,5),rgba(62,80,92,0));
+    float:none;
+    vertical-align:middle;
+}
+
 /*MODIFICATIONS TO CUSTOMER GRID*/
 .thumbnail {
-    background-color:rgb(250,250,250);
+    background-color:rgba(250,250,250,.8);
     color:rgb(5,5,5);
     vertical-align:middle;
 }
 .grid-header {
     font-size:20px;
     font-weight:bold;
+    color:rgb(5,5,5);
 }
 
 /*BUTTONS*/
