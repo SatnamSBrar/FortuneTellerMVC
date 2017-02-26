@@ -70,6 +70,12 @@ button.navbar-toggle {
 .navbar-inverse .navbar-toggle:focus {
     background-color:rgb(62,80,92);
 }
+.navbar .navbar-collapse {
+    background-color:rgb(0,0,0);
+}
+.navbar .in {
+    text-align:right;
+}
 
 /*VIEW HEADER*/
 .view-header {
