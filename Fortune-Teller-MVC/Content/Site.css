@@ -7,6 +7,7 @@
     background-repeat:no-repeat;
     background-size:cover;
     font-family: 'Supermercado One', cursive;
+    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -49,13 +50,18 @@ textarea {
 .navbar-inverse .navbar-brand {
     color:white;
 }
+.navbar-header {
+    border-bottom-color:rgb(255,255,255);
+}
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
     margin-left:-146.06px;  /*SUBTRACTS SIZE OF NAVBAR-HEADER TO ENSURE CENTERED POSITION*/
+    border-bottom-color:rgb(255,255,255);
 }
 .navbar .navbar-collapse {
     text-align: center;
+    border-bottom-color:rgb(255,255,255);
 }
 .navbar-inverse .navbar-nav li a {
     color:white;
