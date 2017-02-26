@@ -206,6 +206,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Customer.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="images\psychics-1026092_1920.jpg" />
+    <Content Include="images\tealight-candle.jpg" />
     <Content Include="Models\Customer.edmx.diagram">
       <DependentUpon>Customer.edmx</DependentUpon>
     </Content>

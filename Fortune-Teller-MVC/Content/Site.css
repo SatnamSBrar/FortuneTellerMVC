@@ -1,9 +1,11 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:rgb(62,80,92);
-    color:rgb(5,5,5);
-    background-image:radial-gradient(rgb(62,80,92),rgb(5,5,5));
+    background-color: rgb(62,80,92);
+    color: rgb(255,255,255);
+    background-image: url('../images/tealight-candle.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
     font-family: 'Supermercado One', cursive;
 }
 
@@ -123,5 +125,5 @@ button.navbar-toggle {
 
 /*DETAILS PAGE*/
 .fortune {
-    font-size:30px;
+    font-size:28px;
 }
