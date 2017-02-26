@@ -4,6 +4,7 @@
     background-color:rgb(62,80,92);
     color:rgb(5,5,5);
     background-image:radial-gradient(rgb(62,80,92),rgb(5,5,5));
+    font-family: 'Supermercado One', cursive;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,6 +25,12 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/*JUMBOTRON HOME PAGE*/
+.jumbotron {
+    background:none;
+    text-align:center;
 }
 
 /*NAVBAR*/
